@@ -1,19 +1,32 @@
 package application;
 
+import java.util.Scanner;
+
 import boardgame.Board;
 import boardgame.Position;
 import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.ChessPosition;
 
 public class Programan {
 
 	public static void main(String[] args) {
-		Position pos = new Position(3, 5);
-		
-		Board bord = new Board(8, 8);
-		
+
+		Scanner sc = new Scanner(System.in);
 		ChessMatch chessMath = new ChessMatch();
 		
-		UI.printBoard(chessMath.getPieces());
+		while (true) {
+			UI.printBoard(chessMath.getPieces());
+			System.out.println();
+			System.out.println("Source: ");
+			ChessPosition source = UI.readChessPosition(sc);
+			
+			System.out.println();
+			System.out.println("Target: ");
+			ChessPosition target  = UI.readChessPosition(sc);
+			
+			ChessPiece capturedPiece = chessMath.performChessMove(source, target);
+		}
 
 	}
 
