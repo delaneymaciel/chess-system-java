@@ -54,7 +54,6 @@ public class Pawn extends ChessPiece{
 			if (getBoard().positionExists(p) && isThereOpponentPiece(p) ) {
 				mat[p.getRow()][p.getColumn()] = true;
 			}
-			
 			p.setValeus(position.getRow() +1, position.getColumn()+1);
 			if (getBoard().positionExists(p) && isThereOpponentPiece(p) ) {
 				mat[p.getRow()][p.getColumn()] = true;
